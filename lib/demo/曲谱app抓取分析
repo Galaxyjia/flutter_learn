@@ -1,0 +1,81 @@
+
+    GET /api/users/check_status/18610902485?device_system=7.1.1&market=GuanWang&device_name=OD103&app_version=1.2.1&area_code=86&android_token=&device_type=3&time_zone=8 HTTP/1.1
+    Host	yun.coach.kuaipeilian.com
+    Accept-Encoding	gzip
+    User-Agent	okhttp/3.12.0
+    Connection	keep-alive
+
+
+	GET /api/coach_info?device_system=7.1.1&market=GuanWang&device_name=OD103&app_version=1.2.1&android_token=&device_type=3&time_zone=8 HTTP/1.1
+    Authorization	Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8veXVuLmNvYWNoLmt1YWlwZWlsaWFuLmNvbS9hcGkvdXNlcnMvbG9naW4iLCJpYXQiOjE1ODEzMDk3MjYsIm5iZiI6MTU4MTMwOTcyNiwianRpIjoieENGMFRDUDZHZGo4eGx2dyIsInN1YiI6IjIyYjJiNGIwLTRiNTktMTFlYS04ZWQyLWIzNjE4YTlmMDQyYSIsInBydiI6ImE0NTBkYjU0MTk0MTUyN2IzMjk5YzE0MmI5ZjJmYjQ3MTUwMzc0Y2IifQ.Gkwq96VWG8mvtHNBE7BhBYTUxVIM9lVZN9Lzxb9eRhc
+    Host	yun.coach.kuaipeilian.com
+    Accept-Encoding	gzip
+    User-Agent	okhttp/3.12.0
+    Connection	keep-alive
+{
+	"ret": true,
+	"ts": 1581311848,
+	"version": "v1",
+	"data": {
+		"user": {
+			"id": "22b2b4b0-4b59-11ea-8ed2-b3618a9f042a",
+			"name": "\u90ed\u8001\u5e08",
+			"nickname": "",
+			"sex": 1,
+			"mobile": "18610902485",
+			"avatar": ""
+		},
+		"salary": {
+			"total_money": "",
+			"total_timeblocks": "",
+			"month_money": ""
+		},
+		"klass_statistics": {
+			"finished_klass_cnt": 0,
+			"complaint_rate": "0%",
+			"conversion_rate": "0%",
+			"finished_trial_klass_cnt": 0,
+			"conversion_num": 0,
+			"on_time_rate": "0%",
+			"should_finish_cnt": 0,
+			"late_klass_cnt": 0,
+			"leave_early_klass_cnt": 0,
+			"miss_klass_cnt": 0
+		},
+		"average_rank": "5.0",
+		"new_average_rank": "\u5f53\u524d\u6682\u672a\u83b7\u5f97\u8bc4\u5206",
+		"is_read_message_list": true,
+		"unread_message_num": 0
+	}
+}
+
+***************************************
+POST /api/users/login HTTP/1.1
+Content-Type	application/json; charset=utf-8
+Content-Length	245
+Host	yun.coach.kuaipeilian.com
+Accept-Encoding	gzip
+User-Agent	okhttp/3.12.0
+Connection	keep-alive
+***************************************
+
+GET /api/nim_token_get?device_system=7.1.1&market=GuanWang&device_name=OD103&app_version=1.2.1&android_token=&device_type=3&time_zone=8 HTTP/1.1
+Authorization	Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8veXVuLmNvYWNoLmt1YWlwZWlsaWFuLmNvbS9hcGkvdXNlcnMvbG9naW4iLCJpYXQiOjE1ODEzMTIyMTgsIm5iZiI6MTU4MTMxMjIxOCwianRpIjoiOEhmRU1PR3Z3WjBwWlNmaiIsInN1YiI6IjIyYjJiNGIwLTRiNTktMTFlYS04ZWQyLWIzNjE4YTlmMDQyYSIsInBydiI6ImE0NTBkYjU0MTk0MTUyN2IzMjk5YzE0MmI5ZjJmYjQ3MTUwMzc0Y2IifQ.unRDundWuI9Kie1oNglOySU-QtiOb6JvRe9KvOD-DNY
+Host	yun.coach.kuaipeilian.com
+Accept-Encoding	gzip
+User-Agent	okhttp/3.12.0
+Connection	keep-alive
+
+http://yun.coach.kuaipeilian.com/api/books/scores/423?book_id=423&klass_id=
+
+"/music/score/18102401/png/1810240101001.png"
+
+《请弹吧》
+http://p.oss.kuaipeilian.com/music/score/18102401/png/1810240101001.png
+
+《公主圆舞曲》
+http://p.oss.kuaipeilian.com/music/score/18102401/png/1810240127001.png
+
+http://p.oss.kuaipeilian.com/music/score/18102402/png/1810240201001.png
+http://p.oss.kuaipeilian.com/music/score/18102402/png/1810240234001.png
+

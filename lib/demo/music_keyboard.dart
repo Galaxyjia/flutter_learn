@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_midi/flutter_midi.dart';
 import 'package:tonic/tonic.dart';
+import 'package:auto_orientation/auto_orientation.dart';
 
 class MusicKeyboard extends StatefulWidget {
   MusicKeyboard({Key key}) : super(key: key);
@@ -23,7 +24,7 @@ class _MusicKeyboardState extends State<MusicKeyboard> {
     FlutterMidi.prepare(sf2: _byte);
   }
 
-  double get keyWidth => 60 + (60 * _widthRatio);
+  double get keyWidth => 80 + (80 * _widthRatio);
   double _widthRatio = 0.0;
   bool _showLabels = true;
 

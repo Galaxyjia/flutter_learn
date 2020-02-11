@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_learn/demo/music_demo.dart';
 import 'package:flutter_learn/demo/music_keyboard.dart';
+import 'package:flutter_learn/demo/pitch_game.dart';
 // import 'demo/listview_demo.dart';
 import 'package:flutter_midi/flutter_midi.dart';
 
+import 'package:flutter_learn/demo/AutoOrientationDemo.dart';
+
 void main()=>runApp(App());
+// void main()=>runApp(AutoOrientationDemo());
 
 class App extends StatelessWidget{
 
@@ -56,23 +60,25 @@ class Home extends StatelessWidget {
         ),
         body: TabBarView(
           children: <Widget>[
-            Icon(Icons.local_florist,size:128.0,color:Colors.black12),
+            RaisedButton(
+              child: Text("Game Screen"),
+              onPressed: (){
+                Navigator.push(
+                  context, 
+                  MaterialPageRoute(builder: (context)=>PitchGame()),
+                );
+              }
+            ),
             // Icon(Icons.change_history,size:128.0,color:Colors.black12),
             // Icon(Icons.directions_bike,size:128.0,color:Colors.black12),
             Column(
               children: <Widget>[
-                  Expanded(
-                  child:Container(
-                    child: MusicSheet(),
-                  ),
-                ),
                 Expanded(
                   child:Container(
-                    // padding: const EdgeInsets.only(top:300),
+                    padding: const EdgeInsets.only(top:300),
                     child:MusicKeyboard(),
                   ), 
                 ),
-
               ],
             ),
             
