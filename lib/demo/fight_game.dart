@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_learn/demo/childOne.dart';
 import 'package:flutter_learn/demo/music_keyboard.dart';
 import 'package:fijkplayer/fijkplayer.dart';
-import '../common/eventBus.dart';
 
 class FightGame extends StatefulWidget {
   FightGame({Key key}) : super(key: key);

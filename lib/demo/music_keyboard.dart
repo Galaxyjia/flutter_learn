@@ -91,9 +91,12 @@ class _MusicKeyboardState extends State<MusicKeyboard> {
                   borderRadius: borderRadius,
                   highlightColor: Colors.grey,
                   onTap: () {
-                    firedMidi(midi);
+                    
                   },
-                  onTapDown: (_) => FlutterMidi.playMidiNote(midi: midi),
+                  onTapDown: (_) {
+                    firedMidi(midi);
+                    FlutterMidi.playMidiNote(midi: midi);
+                  } 
                 ))),
         Positioned(
             left: 0,

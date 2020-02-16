@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../common/eventBus.dart';
+import 'package:tonic/tonic.dart';
 
 class ChildOne extends StatefulWidget {
   ChildOne({Key key}) : super(key: key);
@@ -13,7 +14,7 @@ class _ChildOneState extends State<ChildOne> {
 
   void initState() {
   eventBus.on<MidiEvent>().listen((MidiEvent data) =>
-    show(data.midi.toString())
+    show(Pitch.fromMidiNumber(data.midi).toString())
   );
 }
 
