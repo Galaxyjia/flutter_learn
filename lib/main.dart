@@ -2,10 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_learn/demo/music_demo.dart';
 import 'package:flutter_learn/demo/music_keyboard.dart';
 import 'package:flutter_learn/demo/pitch_game.dart';
+import 'package:flutter_learn/demo/fight_game.dart';
 // import 'demo/listview_demo.dart';
 import 'package:flutter_midi/flutter_midi.dart';
 
 import 'package:flutter_learn/demo/AutoOrientationDemo.dart';
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 
 void main()=>runApp(App());
 // void main()=>runApp(AutoOrientationDemo());
@@ -58,15 +61,26 @@ class Home extends StatelessWidget {
             ]
           ),
         ),
+        bottomNavigationBar: CurvedNavigationBar(
+          backgroundColor: Colors.blueAccent,
+          items: <Widget>[
+            Icon(Icons.add, size: 30),
+            Icon(Icons.list, size: 30),
+            Icon(Icons.compare_arrows, size: 30),
+          ],
+          onTap: (index) {
+            //Handle button tap
+          },
+        ),
         body: TabBarView(
           children: <Widget>[
             RaisedButton(
               child: Text("Game Screen"),
               onPressed: (){
-                Navigator.push(
-                  context, 
-                  MaterialPageRoute(builder: (context)=>PitchGame()),
-                );
+                 Navigator.push(
+                        context, 
+                        MaterialPageRoute(builder: (context)=>FightGame())
+                 );
               }
             ),
             // Icon(Icons.change_history,size:128.0,color:Colors.black12),
@@ -85,6 +99,37 @@ class Home extends StatelessWidget {
             MusicSheet()
           ],
           ),
+          floatingActionButton: SpeedDial(
+            child: Icon(Icons.add),
+            children:[
+                SpeedDialChild(
+                    child: Icon(Icons.accessibility),
+                    backgroundColor: Colors.red,
+                    label: '第一个按钮',
+                    labelStyle: TextStyle(fontSize: 18.0),
+                    onTap:(){
+                        Navigator.push(
+                        context, 
+                        MaterialPageRoute(builder: (context)=>PitchGame()),
+                      );
+                    }
+                ),
+                SpeedDialChild(
+                    child: Icon(Icons.brush),
+                    backgroundColor: Colors.orange,
+                    label: '第二个按钮',
+                    labelStyle: TextStyle(fontSize: 18.0),
+                    onTap: () => print('SECOND CHILD'),
+                ),
+                SpeedDialChild(
+                    child: Icon(Icons.keyboard_voice),
+                    backgroundColor: Colors.green,
+                    label: '第三个按钮',
+                    labelStyle: TextStyle(fontSize: 18.0),
+                    onTap: () => print('THIRD CHILD'),
+                ),
+            ]
+        ),
       ),
     );
   }

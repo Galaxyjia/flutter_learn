@@ -1,24 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_learn/demo/childOne.dart';
 import 'package:flutter_learn/demo/music_keyboard.dart';
-import 'package:auto_orientation/auto_orientation.dart';
+import 'package:fijkplayer/fijkplayer.dart';
+import '../common/eventBus.dart';
 
-class PitchGame extends StatefulWidget {
-  PitchGame({Key key}) : super(key: key);
+class FightGame extends StatefulWidget {
+  FightGame({Key key}) : super(key: key);
 
   @override
-  _PitchGameState createState() => _PitchGameState();
+  _FightGameState createState() => _FightGameState();
 }
 
-class _PitchGameState extends State<PitchGame> {
+class _FightGameState extends State<FightGame> {
+  final FijkPlayer player = FijkPlayer();
+
   @override
   void initState() {
     super.initState();
-    AutoOrientation.landscapeRightMode();
+    player.setDataSource(
+        "http://q5n3oqalb.bkt.clouddn.com/cde.mp4",
+        // "http://q5n3oqalb.bkt.clouddn.com/mi.mp4",
+        autoPlay: true);
   }
 
   @override
   void dispose() {
     super.dispose();
+    player.release();
   }
 
   @override
@@ -34,8 +42,11 @@ class _PitchGameState extends State<PitchGame> {
             verticalDirection: VerticalDirection.down,
             children: <Widget>[
               Container(
-                color: Colors.red,
-                height: 100,
+                height: 200,
+                child: FijkView(player: player),
+              ),
+              Container(
+                child: ChildOne(),
               ),
               Container(
                 height: 200,

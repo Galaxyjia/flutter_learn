@@ -28,6 +28,9 @@ dependencies:
   flutter_midi: 1.0.0
   tonic: ^0.2.3
   auto_orientation: 1.0.6
+  curved_navigation_bar: ^0.3.2
+  flutter_speed_dial: ^1.2.4
+  event_bus: 1.1.1
 
 dev_dependencies:
   flutter_test:

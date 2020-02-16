@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_midi/flutter_midi.dart';
 import 'package:tonic/tonic.dart';
-import 'package:auto_orientation/auto_orientation.dart';
+import '../common/eventBus.dart';
 
 class MusicKeyboard extends StatefulWidget {
   MusicKeyboard({Key key}) : super(key: key);
@@ -22,6 +22,10 @@ class _MusicKeyboardState extends State<MusicKeyboard> {
     FlutterMidi.unmute(); // Optionally Unmute
     ByteData _byte = await rootBundle.load(asset);
     FlutterMidi.prepare(sf2: _byte);
+  }
+
+  void firedMidi(midi){
+    eventBus.fire(new MidiEvent(midi));
   }
 
   double get keyWidth => 80 + (80 * _widthRatio);
@@ -51,7 +55,7 @@ class _MusicKeyboardState extends State<MusicKeyboard> {
                   Positioned(
                       left: 0,
                       right: 0,
-                      bottom: 100,
+                      bottom: 84,
                       top: 0,
                       child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -86,7 +90,9 @@ class _MusicKeyboardState extends State<MusicKeyboard> {
                 child: InkWell(
                   borderRadius: borderRadius,
                   highlightColor: Colors.grey,
-                  onTap: () {},
+                  onTap: () {
+                    firedMidi(midi);
+                  },
                   onTapDown: (_) => FlutterMidi.playMidiNote(midi: midi),
                 ))),
         Positioned(
