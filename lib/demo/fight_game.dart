@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_learn/demo/childOne.dart';
+import 'package:flutter_learn/demo/midiresult.dart';
 import 'package:flutter_learn/demo/music_keyboard.dart';
 import 'package:fijkplayer/fijkplayer.dart';
 
@@ -45,7 +45,7 @@ class _FightGameState extends State<FightGame> {
                 child: FijkView(player: player),
               ),
               Container(
-                child: ChildOne(),
+                child: MidiResult(),
               ),
               Container(
                 height: 200,
