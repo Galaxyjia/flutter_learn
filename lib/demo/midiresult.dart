@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../common/eventBus.dart';
 import 'package:tonic/tonic.dart';
+import 'package:flutter_learn/demo/network_mqtt.dart';
 
 class MidiResult extends StatefulWidget {
   MidiResult({Key key}) : super(key: key);
@@ -10,11 +11,13 @@ class MidiResult extends StatefulWidget {
 }
 
 class _MidiResultState extends State<MidiResult> {
-  String data;
-
+  String data='';
   void initState() {
-  eventBus.on<MidiEvent>().listen((MidiEvent data) =>
-    show(Pitch.fromMidiNumber(data.midi).toString())
+  eventBus.on<MidiEvent>().listen((MidiEvent data){
+    String val = Pitch.fromMidiNumber(data.midi).toString();
+    Mqtt.getInstance().publish(val);
+    show(val);
+  }
   );
 }
 

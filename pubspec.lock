@@ -36,6 +36,20 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.14.11"
+  convert:
+    dependency: transitive
+    description:
+      name: convert
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "2.1.1"
+  crypto:
+    dependency: transitive
+    description:
+      name: crypto
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "2.1.4"
   cupertino_icons:
     dependency: "direct main"
     description:
@@ -102,6 +116,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.1.7"
+  mqtt_client:
+    dependency: "direct main"
+    description:
+      name: mqtt_client
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "5.6.1"
   path:
     dependency: transitive
     description:

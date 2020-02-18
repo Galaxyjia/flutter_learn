@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_learn/demo/music_demo.dart';
 import 'package:flutter_learn/demo/music_keyboard.dart';
+import 'package:flutter_learn/demo/network_mqtt.dart';
 import 'package:flutter_learn/demo/pitch_game.dart';
 import 'package:flutter_learn/demo/fight_game.dart';
 // import 'demo/listview_demo.dart';
@@ -9,6 +10,7 @@ import 'package:flutter_midi/flutter_midi.dart';
 import 'package:flutter_learn/demo/AutoOrientationDemo.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
+
 
 void main()=>runApp(App());
 // void main()=>runApp(AutoOrientationDemo());
@@ -95,7 +97,6 @@ class Home extends StatelessWidget {
                 ),
               ],
             ),
-            
             MusicSheet()
           ],
           ),

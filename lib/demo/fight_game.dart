@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_learn/demo/midiresult.dart';
 import 'package:flutter_learn/demo/music_keyboard.dart';
 import 'package:fijkplayer/fijkplayer.dart';
+import 'package:flutter_learn/demo/network_mqtt.dart';
+
 
 class FightGame extends StatefulWidget {
   FightGame({Key key}) : super(key: key);
@@ -20,12 +22,17 @@ class _FightGameState extends State<FightGame> {
         "http://q5n3oqalb.bkt.clouddn.com/cde.mp4",
         // "http://q5n3oqalb.bkt.clouddn.com/mi.mp4",
         autoPlay: true);
+    _connect();
   }
 
   @override
   void dispose() {
     super.dispose();
     player.release();
+  }
+
+  _connect(){
+    // Mqtt.getInstance().connect();
   }
 
   @override
