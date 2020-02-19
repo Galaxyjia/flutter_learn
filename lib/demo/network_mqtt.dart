@@ -34,6 +34,23 @@ class Mqtt{
       print('EXAMPLE::Publishing our topic');
       client.publishMessage(pubTopic, MqttQos.exactlyOnce, builder.payload);
   }
+
+  listen(callback(val)){
+    /// Ok, lets try a subscription
+    print('EXAMPLE::Subscribing to the test/lol topic');
+    const String topic = 'game/test'; // Not a wildcard topic
+    client.subscribe(topic, MqttQos.atMostOnce);
+
+    client.updates.listen((List<MqttReceivedMessage<MqttMessage>> c) {
+      final MqttPublishMessage recMess = c[0].payload;
+      final String pt =
+      MqttPublishPayload.bytesToStringAsString(recMess.payload.message);
+      callback(pt);
+      print(
+          'EXAMPLE::Change notification:: topic is <${c[0].topic}>, payload is <-- $pt -->');
+      print('');
+    });
+  }
 }
 
 
@@ -79,20 +96,6 @@ Future<int> start() async {
     exit(-1);
   }
 
-  /// Ok, lets try a subscription
-  print('EXAMPLE::Subscribing to the test/lol topic');
-  const String topic = 'game/test'; // Not a wildcard topic
-  client.subscribe(topic, MqttQos.atMostOnce);
-
-  client.updates.listen((List<MqttReceivedMessage<MqttMessage>> c) {
-    final MqttPublishMessage recMess = c[0].payload;
-    final String pt =
-    MqttPublishPayload.bytesToStringAsString(recMess.payload.message);
-
-    print(
-        'EXAMPLE::Change notification:: topic is <${c[0].topic}>, payload is <-- $pt -->');
-    print('');
-  });
 
   client.published.listen((MqttPublishMessage message) {
     print(

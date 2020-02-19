@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_learn/demo/music_demo.dart';
-import 'package:flutter_learn/demo/music_keyboard.dart';
-import 'package:flutter_learn/demo/network_mqtt.dart';
+// import 'package:flutter_learn/demo/music_keyboard.dart';
 import 'package:flutter_learn/demo/pitch_game.dart';
 import 'package:flutter_learn/demo/fight_game.dart';
 // import 'demo/listview_demo.dart';
-import 'package:flutter_midi/flutter_midi.dart';
-
-import 'package:flutter_learn/demo/AutoOrientationDemo.dart';
+// import 'package:flutter_midi/flutter_midi.dart';
+// import 'package:flutter_learn/demo/AutoOrientationDemo.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 
+import 'package:flutter_learn/demo/Pages/stick_page.dart';
 
 void main()=>runApp(App());
 // void main()=>runApp(AutoOrientationDemo());
@@ -85,17 +84,14 @@ class Home extends StatelessWidget {
                  );
               }
             ),
-            // Icon(Icons.change_history,size:128.0,color:Colors.black12),
-            // Icon(Icons.directions_bike,size:128.0,color:Colors.black12),
-            Column(
-              children: <Widget>[
-                Expanded(
-                  child:Container(
-                    padding: const EdgeInsets.only(top:300),
-                    child:MusicKeyboard(),
-                  ), 
-                ),
-              ],
+             RaisedButton(
+              child: Text("Stick Screen"),
+              onPressed: (){
+                 Navigator.push(
+                        context, 
+                        MaterialPageRoute(builder: (context)=>TargetPage())
+                 );
+              }
             ),
             MusicSheet()
           ],
