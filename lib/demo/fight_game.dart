@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_learn/demo/midiresult.dart';
 import 'package:flutter_learn/demo/music_keyboard.dart';
 import 'package:video_player/video_player.dart';
+import 'dart:async';
 import 'package:flutter_learn/demo/network_mqtt.dart';
 
 
@@ -13,33 +14,32 @@ class FightGame extends StatefulWidget {
 }
 
 class _FightGameState extends State<FightGame> {
+  // 声明视频控制器
   VideoPlayerController _controller;
-
-   final String videoUrl =
-     "http://q5n3oqalb.bkt.clouddn.com/cde.mp4";
+  //
+  final String videoUrl ="https://www.stwms.cn/assets/doremi.mp4"; ///"http://melody.app.h928.com/doremi.mp4";
 
   @override
   void initState() {
-    _controller =
-        VideoPlayerController.network(videoUrl)
-          ..initialize().then((_) {
-            setState(() {
-              _controller.play();
-            });
-          });
-
-    // Use the controller to loop the video.
-    _controller.setLooping(true);
-
+    // TODO: implement initState
     super.initState();
+    _controller = VideoPlayerController.network(videoUrl)
+      ..initialize().then((_) {
+        setState(() {});
+        _controller.play();
+        _controller.setLooping(true);
+        // _controller.setVolume(0.0);
+        Timer.periodic(Duration(seconds: 15), (Timer time) {
+          print(time);
+        });
+      });
   }
 
   @override
   void dispose() {
-    // Ensure disposing of the VideoPlayerController to free up resources.
-    _controller.dispose();
-
+    // TODO: implement dispose
     super.dispose();
+    _controller.pause();
   }
 
   _connect(){
