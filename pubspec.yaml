@@ -34,6 +34,9 @@ dependencies:
   mqtt_client: ^5.6.0
   sticky_infinite_list: ^1.2.3
   intl: 0.16.1
+  rect_getter: ^0.0.1
+  gradient_text: ^1.0.2
+  fluro: 1.5.2
 
 dev_dependencies:
   flutter_test:
@@ -55,6 +58,9 @@ flutter:
   assets:
     - assets/sounds/Piano.SF2
     - assets/images/icon.png
+    - assets/images/illustration.png
+    - assets/images/illustration2.png
+    - assets/images/illustration3.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
