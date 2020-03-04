@@ -4,6 +4,7 @@ import 'package:flutter_learn/config/routes.dart';
 import 'open_screen_data.dart';
 import 'Page_indicator.dart';
 import 'package:gradient_text/gradient_text.dart';
+import '../config/ navigator_util.dart';
 
 class OpenScreen extends StatefulWidget {
   @override
@@ -156,7 +157,7 @@ class _OpenScreenState extends State<OpenScreen> with TickerProviderStateMixin {
                           color: Colors.black,
                         ),
                         onPressed: () {
-                          Application.router.navigateTo(context, Routes.home, replace: true);                       
+                          NavigatorUtil.goLoginPage(context);                       
                         },
                       )
                     : Container(),

@@ -9,8 +9,9 @@ import 'package:flutter_learn/demo/fight_game.dart';
 // import 'package:flutter_learn/demo/AutoOrientationDemo.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
-
 import 'package:flutter_learn/demo/Pages/stick_page.dart';
+import '../config/ navigator_util.dart';
+
 
 class Home extends StatelessWidget {
   @override
@@ -55,6 +56,7 @@ class Home extends StatelessWidget {
           ],
           onTap: (index) {
             //Handle button tap
+            print(index);
           },
         ),
         body: TabBarView(
@@ -69,6 +71,12 @@ class Home extends StatelessWidget {
               }
             ),
              RaisedButton(
+              child: Text("Planning Screen"),
+              onPressed: (){
+                  NavigatorUtil.goPlanningPage(context);
+              }
+            ),
+             RaisedButton(
               child: Text("Stick Screen"),
               onPressed: (){
                  Navigator.push(
@@ -77,7 +85,8 @@ class Home extends StatelessWidget {
                  );
               }
             ),
-            MusicSheet()
+            
+            // MusicSheet()
           ],
           ),
           floatingActionButton: SpeedDial(
@@ -91,7 +100,7 @@ class Home extends StatelessWidget {
                     onTap:(){
                         Navigator.push(
                         context, 
-                        MaterialPageRoute(builder: (context)=>PitchGame()),
+                        MaterialPageRoute(builder: (context)=>FightGame()),
                       );
                     }
                 ),

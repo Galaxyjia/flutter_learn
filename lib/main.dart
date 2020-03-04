@@ -12,26 +12,24 @@ void main(){
   runApp(MyApp());
 }
 // void main()=>runApp(AutoOrientationDemo());
-
-class App extends StatelessWidget{
-
-  @override
-  Widget build(BuildContext context){
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: OpenScreen(),
-      theme: ThemeData(
-        primarySwatch: Colors.purple
-      ),   
-    );
-  }
-}
+// class App extends StatelessWidget{
+//   @override
+//   Widget build(BuildContext context){
+//     return MaterialApp(
+//       debugShowCheckedModeBanner: false,
+//       home: OpenScreen(),
+//       theme: ThemeData(
+//         primarySwatch: Colors.purple
+//       ),   
+//     );
+//   }
+// }
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Weather App',
+      title: 'Musicook App',
       /// 生成路由
       onGenerateRoute: Application.router.generator,
     );

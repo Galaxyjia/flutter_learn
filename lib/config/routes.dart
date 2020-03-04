@@ -4,6 +4,8 @@ import 'router_handler.dart';
 class Routes {
   static String root = "/";
   static String home = "/home";
+  static String login = "/login";
+  static String planning = "/planning";
   // static String demoParams = "/deme_params";
   // static String returnParams = "/return_params";
   // static String transitionDemo = "/transitionDemo";
@@ -19,6 +21,8 @@ class Routes {
     /// 我这边先不设置默认的转场动画，转场动画在下面会讲，可以在另外一个地方设置（可以看NavigatorUtil类）
     router.define(root, handler: splashHandler);
     router.define(home, handler: homeHandler);
+    router.define(login, handler: loginHandler);
+    router.define(planning, handler: planningHandler);
     // router.define(demoParams, handler: demoParamHandler);
     // router.define(returnParams, handler: returnParamHandler);
     // router.define(transitionDemo, handler: transitionDemoHandler);
